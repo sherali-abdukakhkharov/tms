@@ -1,0 +1,38 @@
+{
+  "name": "tms",
+  "version": "1.0.0",
+  "description": "Task Management System for Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "format:code": "prettier --config .prettierrc './**/**.js' --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherali-abdukakhkharov/tms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sherali-abdukakhkharov/tms/issues"
+  },
+  "homepage": "https://github.com/sherali-abdukakhkharov/tms#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "sequelize-cli": "^6.4.1"
+  }
+}
