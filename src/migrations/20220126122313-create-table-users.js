@@ -16,7 +16,11 @@ module.exports = {
       },
       created_by: {
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
       created_at: {
         type: Sequelize.DATE,
