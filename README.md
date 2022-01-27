@@ -8,6 +8,10 @@
 
 Write application envoirment variables in to .env file
 
+#### `cp config/config.json.example config/config.json`
+
+Write db envoirment variables in to config/config.json file
+
 ### Create postgres database on your local machine
 
 #### `npm run db:megrate`
