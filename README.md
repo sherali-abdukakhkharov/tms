@@ -35,3 +35,9 @@ Format your code.
 #### `npm run lint`
 
 Check systax your code via eslint:airbnb
+
+| **Roles/Modules** | users | organizations | organization_users | projects | tasks | modules | roles | role_access | permissions |
+| :---------------: | :---: | :-----------: | :----------------: | :------: | :---: | :-----: | :---: | :---------: | :---------: |
+|     **Admin**     | crud  |     crud      |        crud        |   crud   | crud  |  crud   | crud  |    crud     |    crud     |
+|    **Rahbar**     |   r   |      ru       |        crud        |   crud   |
+|     **Xodim**     |       |               |                    |    r     |  ru   |
