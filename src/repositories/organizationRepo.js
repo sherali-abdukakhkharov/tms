@@ -59,6 +59,30 @@ async function deleteOrganization(id) {
   }
 }
 
+async function getStatistics() {
+  try {
+    return await pg(
+      false,
+      `
+      SELECT  (
+        SELECT COUNT(*)
+        FROM   organizations
+        ) AS organizations_count,
+        (
+        SELECT COUNT(*)
+        FROM   projects
+        ) AS projects_count,
+        (
+        SELECT COUNT(*)
+        FROM   tasks
+        ) AS tasks_count
+      `
+    );
+  } catch (error) {
+    throw Error(`organizations repository [getStatistics]:${error}`);
+  }
+}
+
 async function getStatisticsByOrgId(id) {
   try {
     return await pg(
@@ -87,5 +111,6 @@ module.exports = {
   insertOrganization,
   updateOrganization,
   deleteOrganization,
+  getStatistics,
   getStatisticsByOrgId
 };

@@ -101,11 +101,26 @@ const getStatistics = async (req, res) => {
     if (!permission) {
       return res.send('Permission denied!');
     }
+    const statistics = await repository.getStatistics();
+    return res.send(statistics);
+  } catch (error) {
+    throw Error(`organization controller [getStatistics]:${error}`);
+  }
+};
+
+const getStatisticsByOrgId = async (req, res) => {
+  try {
+    const { token } = req.headers;
+    const permission = await auth('read', MODULES.organizations, token);
+
+    if (!permission) {
+      return res.send('Permission denied!');
+    }
     const { id } = req.params;
     const statistics = await repository.getStatisticsByOrgId(id);
     return res.send(statistics);
   } catch (error) {
-    throw Error(`organization controller [getStatistics]:${error}`);
+    throw Error(`organization controller [getStatisticsByOrgId]:${error}`);
   }
 };
 
@@ -115,5 +130,6 @@ module.exports = {
   getOrganizations,
   getOrganization,
   insertOrganization,
-  getStatistics
+  getStatistics,
+  getStatisticsByOrgId
 };
