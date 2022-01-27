@@ -15,10 +15,9 @@ const updateUser = async (req, res) => {
     const foundUser = await repository.getById(id);
     if (foundUser) {
       const user = await repository.updateUser(req.body, id);
-      res.send(user);
-    } else {
-      res.status(404).send('User with this ID not found!');
+      return res.send(user);
     }
+    return res.status(404).send('User with this ID not found!');
   } catch (error) {
     throw Error(`users controller [updateUser]:${error}`);
   }
@@ -35,10 +34,10 @@ const deleteUser = async (req, res) => {
     const { id } = req.params;
     const foundUser = await repository.getById(id);
     if (foundUser) {
-      const user = await repository.deleteUser(id);
+      await repository.deleteUser(id);
       return res.send('User successfully deleted!');
     }
-    res.status(404).send('User with this ID not found!');
+    return res.status(404).send('User with this ID not found!');
   } catch (error) {
     throw Error(`users controller [deleteUser]:${error}`);
   }
@@ -54,7 +53,7 @@ const getUsers = async (req, res) => {
       return res.send('Permission denied!');
     }
     const users = await repository.getUsers();
-    res.send(users);
+    return res.send(users);
   } catch (error) {
     throw Error(`users controller [getUsers]:${error}`);
   }
@@ -70,7 +69,7 @@ const getUser = async (req, res) => {
     }
     const { id } = req.params;
     const user = await repository.getById(id);
-    res.send(user);
+    return res.send(user);
   } catch (error) {
     throw Error(`users controller [getUser]:${error}`);
   }
@@ -90,7 +89,7 @@ const insertUser = async (req, res) => {
     const payload = jwt.verify(token);
 
     const user = await repository.insertUser(full_name, phone_number, password, payload.userId);
-    res.send(user);
+    return res.send(user);
   } catch (error) {
     throw Error(`users controller [insertUser]:${error}`);
   }
@@ -99,7 +98,6 @@ const insertUser = async (req, res) => {
 module.exports = {
   updateUser,
   deleteUser,
-  updateUser,
   getUsers,
   getUser,
   insertUser

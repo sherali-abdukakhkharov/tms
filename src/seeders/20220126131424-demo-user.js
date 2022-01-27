@@ -1,7 +1,3 @@
-'use strict';
-
-const { UUID } = require('sequelize');
-
 module.exports = {
   up: async (queryInterface) => {
     await queryInterface.bulkInsert(

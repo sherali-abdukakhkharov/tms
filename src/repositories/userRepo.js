@@ -47,7 +47,7 @@ async function insertUser(full_name, phone_number, password, userId) {
   try {
     return await pg(
       true,
-      `INSERT INTO users (full_name, phone_number, password, created_by) VALUES ($1, $2, $3, $4) returning *`,
+      'INSERT INTO users (full_name, phone_number, password, created_by) VALUES ($1, $2, $3, $4) returning *',
       full_name,
       phone_number,
       password,
@@ -64,7 +64,7 @@ async function updateUser(args, userId) {
     if (full_name && password) {
       return await pg(
         true,
-        `UPDATE users SET full_name=$1, password=$2 WHERE id=$3 returning *`,
+        'UPDATE users SET full_name=$1, password=$2 WHERE id=$3 returning *',
         full_name,
         password,
         userId
@@ -73,19 +73,12 @@ async function updateUser(args, userId) {
     if (full_name) {
       return await pg(
         true,
-        `UPDATE users SET full_name=$1 WHERE id=$2 returning *`,
+        'UPDATE users SET full_name=$1 WHERE id=$2 returning *',
         full_name,
         userId
       );
     }
-    if (password) {
-      return await pg(
-        true,
-        `UPDATE users SET password=$1 WHERE id=$2 returning *`,
-        password,
-        userId
-      );
-    }
+    return await pg(true, 'UPDATE users SET password=$1 WHERE id=$2 returning *', password, userId);
   } catch (error) {
     throw Error(`users repository [updateUser]:${error}`);
   }
@@ -93,7 +86,7 @@ async function updateUser(args, userId) {
 
 async function deleteUser(id) {
   try {
-    return await pg(false, `DELETE FROM users WHERE id=$1`, id);
+    return await pg(false, 'DELETE FROM users WHERE id=$1', id);
   } catch (error) {
     throw Error(`users repository [deleteUser]:${error}`);
   }
@@ -101,7 +94,7 @@ async function deleteUser(id) {
 
 async function findUserByPhone(phone_number) {
   try {
-    return await pg(false, `SELECT * FROM users WHERE phone_number=$1`, phone_number);
+    return await pg(false, 'SELECT * FROM users WHERE phone_number=$1', phone_number);
   } catch (error) {
     throw Error(`users repository [findUserByPhone]:${error}`);
   }
