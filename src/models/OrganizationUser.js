@@ -13,12 +13,12 @@ module.exports = (sequelize, Sequelize) => {
     {
       id: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         primaryKey: true,
-        autoIncrement: true
+        defaultValue: Sequelize.literal('uuid_generate_v4()')
       },
       org_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: true,
         references: {
           model: 'organizations',
@@ -26,7 +26,7 @@ module.exports = (sequelize, Sequelize) => {
         }
       },
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: true,
         references: {
           model: 'users',

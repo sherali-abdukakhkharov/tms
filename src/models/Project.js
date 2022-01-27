@@ -13,15 +13,15 @@ module.exports = (sequelize, Sequelize) => {
     {
       id: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         primaryKey: true,
-        autoIncrement: true
+        defaultValue: Sequelize.literal('uuid_generate_v4()')
       },
       name: {
         type: Sequelize.TEXT
       },
       org_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'organizations',
@@ -29,7 +29,7 @@ module.exports = (sequelize, Sequelize) => {
         }
       },
       created_by: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'users',

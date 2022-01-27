@@ -5,15 +5,15 @@ module.exports = {
     await queryInterface.createTable('organizations', {
       id: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         primaryKey: true,
-        autoIncrement: true
+        defaultValue: Sequelize.literal('uuid_generate_v4()')
       },
       name: {
         type: Sequelize.STRING
       },
       created_by: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'users',

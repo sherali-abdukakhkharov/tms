@@ -5,12 +5,12 @@ module.exports = {
     await queryInterface.createTable('tasks', {
       id: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         primaryKey: true,
-        autoIncrement: true
+        defaultValue: Sequelize.literal('uuid_generate_v4()')
       },
       created_by: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'users',
@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       project_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'projects',
@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       worker_user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
           model: 'organization_users',

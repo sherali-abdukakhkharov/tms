@@ -1,4 +1,5 @@
 'use strict';
+const uuid = require('uuid');
 
 module.exports = {
   up: async (queryInterface) => {
@@ -6,9 +7,9 @@ module.exports = {
       'permissions',
       [
         {
-          id: 1,
-          role_id: 1,
-          user_id: 1,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          user_id: '385aec9e-fdff-4033-bdbb-1544a50bec5e',
           created_at: new Date(),
           updated_at: new Date()
         }

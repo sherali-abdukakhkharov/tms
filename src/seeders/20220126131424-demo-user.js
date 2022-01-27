@@ -1,12 +1,14 @@
 'use strict';
 
+const { UUID } = require('sequelize');
+
 module.exports = {
   up: async (queryInterface) => {
     await queryInterface.bulkInsert(
       'users',
       [
         {
-          id: 1,
+          id: '385aec9e-fdff-4033-bdbb-1544a50bec5e',
           full_name: 'Foydalanuvchi 1',
           password: '12345678',
           created_by: null,
@@ -14,18 +16,18 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 2,
+          id: '9b5dd9ef-e3b1-4211-8a41-e73b14651013',
           full_name: 'Foydalanuvchi 2',
           password: '12345678',
-          created_by: 1,
+          created_by: '385aec9e-fdff-4033-bdbb-1544a50bec5e',
           created_at: new Date(),
           updated_at: new Date()
         },
         {
-          id: 3,
+          id: '6a68c0a4-dd64-40f9-97ce-3e2c2d75f870',
           full_name: 'Foydalanuvchi 3',
           password: '12345678',
-          created_by: 2,
+          created_by: '9b5dd9ef-e3b1-4211-8a41-e73b14651013',
           created_at: new Date(),
           updated_at: new Date()
         }

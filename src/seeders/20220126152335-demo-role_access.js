@@ -1,4 +1,5 @@
 'use strict';
+const uuid = require('uuid');
 
 module.exports = {
   up: async (queryInterface) => {
@@ -6,9 +7,9 @@ module.exports = {
       'role_access',
       [
         {
-          id: 1,
-          role_id: 1,
-          module_id: 1,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '6dce81f7-0e43-45c5-81a8-e401b700fe34',
           insert: true,
           read: true,
           update: true,
@@ -17,9 +18,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 2,
-          role_id: 1,
-          module_id: 2,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '44942d80-bd8b-4f2b-a327-27e4a3df8970',
           insert: true,
           read: true,
           update: true,
@@ -28,9 +29,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 3,
-          role_id: 1,
-          module_id: 3,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '4ce70e82-67b2-49c8-997e-41ff296412f5',
           insert: true,
           read: true,
           update: true,
@@ -39,9 +40,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 4,
-          role_id: 1,
-          module_id: 4,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: 'c10e05aa-6e52-426b-be0b-724ea139ba2c',
           insert: true,
           read: true,
           update: true,
@@ -50,9 +51,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 5,
-          role_id: 1,
-          module_id: 5,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '3c04e277-c2e6-4edb-a24d-56e63e53a63e',
           insert: true,
           read: true,
           update: true,
@@ -61,9 +62,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 6,
-          role_id: 1,
-          module_id: 6,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '120b62fc-2614-4bdd-8038-1cd36af7d05c',
           insert: true,
           read: true,
           update: true,
@@ -72,9 +73,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 7,
-          role_id: 1,
-          module_id: 7,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '02d04c21-3b2a-4d61-bcae-dd7ed1675db2',
           insert: true,
           read: true,
           update: true,
@@ -83,9 +84,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 8,
-          role_id: 1,
-          module_id: 8,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: '1ae60e95-0d8d-450e-84a8-95ecb2af6539',
           insert: true,
           read: true,
           update: true,
@@ -94,9 +95,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 9,
-          role_id: 1,
-          module_id: 9,
+          id: uuid.v4(),
+          role_id: 'f6a7203c-983b-460e-913c-63a1a1c4b94b',
+          module_id: 'b0b8b2ad-1f55-4d91-94aa-f4e2016240d5',
           insert: true,
           read: true,
           update: true,
@@ -105,9 +106,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 10,
-          role_id: 2,
-          module_id: 1,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '6dce81f7-0e43-45c5-81a8-e401b700fe34',
           insert: false,
           read: true,
           update: false,
@@ -116,9 +117,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 11,
-          role_id: 2,
-          module_id: 2,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '44942d80-bd8b-4f2b-a327-27e4a3df8970',
           insert: false,
           read: true,
           update: true,
@@ -127,9 +128,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 12,
-          role_id: 2,
-          module_id: 3,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '4ce70e82-67b2-49c8-997e-41ff296412f5',
           insert: true,
           read: true,
           update: true,
@@ -138,9 +139,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 13,
-          role_id: 2,
-          module_id: 4,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: 'c10e05aa-6e52-426b-be0b-724ea139ba2c',
           insert: true,
           read: true,
           update: true,
@@ -149,9 +150,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 14,
-          role_id: 2,
-          module_id: 5,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '3c04e277-c2e6-4edb-a24d-56e63e53a63e',
           insert: true,
           read: true,
           update: true,
@@ -160,9 +161,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 15,
-          role_id: 2,
-          module_id: 6,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '120b62fc-2614-4bdd-8038-1cd36af7d05c',
           insert: false,
           read: false,
           update: false,
@@ -171,9 +172,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 16,
-          role_id: 2,
-          module_id: 7,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '02d04c21-3b2a-4d61-bcae-dd7ed1675db2',
           insert: false,
           read: false,
           update: false,
@@ -182,9 +183,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 17,
-          role_id: 2,
-          module_id: 8,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: '1ae60e95-0d8d-450e-84a8-95ecb2af6539',
           insert: false,
           read: false,
           update: false,
@@ -193,9 +194,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 18,
-          role_id: 2,
-          module_id: 9,
+          id: uuid.v4(),
+          role_id: '1a6fb12a-16db-4841-890b-dae54d95fed2',
+          module_id: 'b0b8b2ad-1f55-4d91-94aa-f4e2016240d5',
           insert: false,
           read: false,
           update: false,
@@ -204,9 +205,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 19,
-          role_id: 3,
-          module_id: 1,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '6dce81f7-0e43-45c5-81a8-e401b700fe34',
           insert: false,
           read: false,
           update: false,
@@ -215,9 +216,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 20,
-          role_id: 3,
-          module_id: 2,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '44942d80-bd8b-4f2b-a327-27e4a3df8970',
           insert: false,
           read: false,
           update: false,
@@ -226,9 +227,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 21,
-          role_id: 3,
-          module_id: 3,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '4ce70e82-67b2-49c8-997e-41ff296412f5',
           insert: false,
           read: false,
           update: false,
@@ -237,9 +238,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 22,
-          role_id: 3,
-          module_id: 4,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: 'c10e05aa-6e52-426b-be0b-724ea139ba2c',
           insert: false,
           read: true,
           update: false,
@@ -248,9 +249,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 23,
-          role_id: 3,
-          module_id: 5,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '3c04e277-c2e6-4edb-a24d-56e63e53a63e',
           insert: false,
           read: true,
           update: true,
@@ -259,9 +260,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 24,
-          role_id: 3,
-          module_id: 6,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '120b62fc-2614-4bdd-8038-1cd36af7d05c',
           insert: false,
           read: false,
           update: false,
@@ -270,9 +271,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 25,
-          role_id: 3,
-          module_id: 7,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '02d04c21-3b2a-4d61-bcae-dd7ed1675db2',
           insert: false,
           read: false,
           update: false,
@@ -281,9 +282,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 26,
-          role_id: 3,
-          module_id: 8,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: '1ae60e95-0d8d-450e-84a8-95ecb2af6539',
           insert: false,
           read: false,
           update: false,
@@ -292,9 +293,9 @@ module.exports = {
           updated_at: new Date()
         },
         {
-          id: 27,
-          role_id: 3,
-          module_id: 9,
+          id: uuid.v4(),
+          role_id: '6ae533d7-669b-4e3b-ac4c-2494c5dd93cd',
+          module_id: 'b0b8b2ad-1f55-4d91-94aa-f4e2016240d5',
           insert: false,
           read: false,
           update: false,
