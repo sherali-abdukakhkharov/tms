@@ -3,12 +3,14 @@ const userRoutes = require('./User');
 const authRoutes = require('./Auth');
 const orgRoutes = require('./Organization');
 const orgUserRoutes = require('./OrganizationUser');
+const projectRoutes = require('./Projects');
 
 const router = express.Router({ mergeParams: true });
 
 router.use('/users', userRoutes);
 router.use('/organizations', orgRoutes);
 router.use('/organizationUsers', orgUserRoutes);
+router.use('/projects', projectRoutes);
 router.use('/auth', authRoutes);
 
 router.use('/', (req, res) => {
