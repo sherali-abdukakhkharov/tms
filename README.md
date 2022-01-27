@@ -1,2 +1,33 @@
 # tms
-Task Management System for Projects
+
+# Task Management System for Projects backend
+
+### Setup envoirment
+
+#### `cp .env.example .env`
+
+Write application envoirment variables in to .env file
+
+### Create postgres database on your local machine
+
+#### `npm run db:megrate`
+
+Run migrations
+
+#### `npm run db:seed`
+
+Run seeders.
+
+### Scripts
+
+#### `npm run start`
+
+Starts the application in development using `nodemon`
+
+#### `npm run format:code`
+
+Format your code.
+
+#### `npm run lint`
+
+Check systax your code via eslint:airbnb
