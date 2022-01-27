@@ -9,5 +9,6 @@ router
   .get(ctrl.getOrganization)
   .put(ctrl.updateOrganization)
   .delete(ctrl.deleteOrganization);
+router.route('/statistics/:id').get(ctrl.getStatistics);
 
 module.exports = router;

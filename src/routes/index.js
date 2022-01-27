@@ -12,7 +12,7 @@ router.use('/users', userRoutes);
 router.use('/organizations', orgRoutes);
 router.use('/organizationUsers', orgUserRoutes);
 router.use('/projects', projectRoutes);
-router.use('tasks', taskRoutes);
+router.use('/tasks', taskRoutes);
 router.use('/auth', authRoutes);
 
 router.use('/', (req, res) => {
