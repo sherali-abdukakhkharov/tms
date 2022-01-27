@@ -20,6 +20,20 @@ async function getById(id) {
     throw Error(`users repository [findById]:${error}`);
   }
 }
+async function isAdminByUserId(id) {
+  try {
+    return await pg(
+      true,
+      ` SELECT
+          *
+        FROM permissions p
+        WHERE p.user_id = $1 and p.role_id = 'f6a7203c-983b-460e-913c-63a1a1c4b94b';`,
+      id
+    );
+  } catch (error) {
+    throw Error(`users repository [findById]:${error}`);
+  }
+}
 
 async function getUsers() {
   try {
@@ -105,5 +119,6 @@ module.exports = {
   insertUser,
   updateUser,
   deleteUser,
-  findUserByPhone
+  findUserByPhone,
+  isAdminByUserId
 };

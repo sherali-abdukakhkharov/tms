@@ -22,7 +22,7 @@ async function getProjects() {
       ` SELECT
           *
         FROM projects
-        ORDER BY u.created_at desc;
+        ORDER BY created_at desc;
         `
     );
   } catch (error) {

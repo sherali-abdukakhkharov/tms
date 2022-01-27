@@ -59,58 +59,10 @@ async function deleteOrganization(id) {
   }
 }
 
-async function getStatistics() {
-  try {
-    return await pg(
-      false,
-      `
-      SELECT  (
-        SELECT COUNT(*)
-        FROM   organizations
-        ) AS organizations_count,
-        (
-        SELECT COUNT(*)
-        FROM   projects
-        ) AS projects_count,
-        (
-        SELECT COUNT(*)
-        FROM   tasks
-        ) AS tasks_count
-      `
-    );
-  } catch (error) {
-    throw Error(`organizations repository [getStatistics]:${error}`);
-  }
-}
-
-async function getStatisticsByOrgId(id) {
-  try {
-    return await pg(
-      false,
-      `
-      SELECT
-        o.id,
-        o.name,
-        (select count(*) from projects where projects.org_id = o.id) as projects_count,
-        (select count(*) from tasks t join projects p on p.id = t.project_id join organizations o2 on p.org_id = o2.id where p.org_id = $1) as tasks_count
-      FROM
-        organizations o
-      WHERE
-        o.id = $1
-      `,
-      id
-    );
-  } catch (error) {
-    throw Error(`organizations repository [getStatisticsByOrgId]:${error}`);
-  }
-}
-
 module.exports = {
   getById,
   getOrganizations,
   insertOrganization,
   updateOrganization,
-  deleteOrganization,
-  getStatistics,
-  getStatisticsByOrgId
+  deleteOrganization
 };
