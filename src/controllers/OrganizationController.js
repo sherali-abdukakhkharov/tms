@@ -14,7 +14,7 @@ const updateOrganization = async (req, res) => {
     const { id } = req.params;
     const foundOrganization = await repository.getById(id);
     if (foundOrganization) {
-      const organization = await repository.updateOrganization(req.body, id);
+      const organization = await repository.updateOrganization(req.body.name, id);
       return res.send(organization);
     }
     return res.status(404).send('Organization with this ID not found!');
