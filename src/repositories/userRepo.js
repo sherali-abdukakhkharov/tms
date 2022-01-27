@@ -43,14 +43,15 @@ async function getUsers() {
   }
 }
 
-async function insertUser(args) {
+async function insertUser(full_name, phone_number, password, userId) {
   try {
-    const { fullName, password } = args;
     return await pg(
-      false,
-      `INSERT INTO users (full_name, password) VALUES ($1, $2)`,
-      fullName,
-      password
+      true,
+      `INSERT INTO users (full_name, phone_number, password, created_by) VALUES ($1, $2, $3, $4) returning *`,
+      full_name,
+      phone_number,
+      password,
+      userId
     );
   } catch (error) {
     throw Error(`users repository [insertUser]:${error}`);
@@ -59,21 +60,31 @@ async function insertUser(args) {
 
 async function updateUser(args, userId) {
   try {
-    const { fullName, password } = args;
-    if (fullName && password) {
+    const { full_name, password } = args;
+    if (full_name && password) {
       return await pg(
         true,
-        `UPDATE users SET full_name=$1, password=$2 WHERE id=$3`,
-        fullName,
+        `UPDATE users SET full_name=$1, password=$2 WHERE id=$3 returning *`,
+        full_name,
         password,
         userId
       );
     }
-    if (fullName) {
-      return await pg(true, `UPDATE users SET full_name=$1 WHERE id=$3`, fullName, userId);
+    if (full_name) {
+      return await pg(
+        true,
+        `UPDATE users SET full_name=$1 WHERE id=$2 returning *`,
+        full_name,
+        userId
+      );
     }
     if (password) {
-      return await pg(true, `UPDATE users SET password=$1 WHERE id=$3`, password, userId);
+      return await pg(
+        true,
+        `UPDATE users SET password=$1 WHERE id=$2 returning *`,
+        password,
+        userId
+      );
     }
   } catch (error) {
     throw Error(`users repository [updateUser]:${error}`);
@@ -82,9 +93,17 @@ async function updateUser(args, userId) {
 
 async function deleteUser(id) {
   try {
-    return await pg(false, `DELETE FROM user WHERE id=$1`, id);
+    return await pg(false, `DELETE FROM users WHERE id=$1`, id);
   } catch (error) {
     throw Error(`users repository [deleteUser]:${error}`);
+  }
+}
+
+async function findUserByPhone(phone_number) {
+  try {
+    return await pg(false, `SELECT * FROM users WHERE phone_number=$1`, phone_number);
+  } catch (error) {
+    throw Error(`users repository [findUserByPhone]:${error}`);
   }
 }
 
@@ -93,5 +112,6 @@ module.exports = {
   getUsers,
   insertUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  findUserByPhone
 };

@@ -19,7 +19,7 @@ module.exports = {
     expiration: process.env.JWT_EXPIRATION
   },
   MODULES: {
-    users: 'Fodalanuvchilar',
+    users: 'Foydalanuvchilar',
     organizations: 'Tashkilotlar',
     organizationUsers: 'Tashkilot xodimlari',
     projects: 'Loyihalar',

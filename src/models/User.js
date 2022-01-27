@@ -20,6 +20,10 @@ module.exports = (sequelize, Sequelize) => {
       full_name: {
         type: Sequelize.STRING
       },
+      phone_number: {
+        type: Sequelize.STRING,
+        unique: true
+      },
       password: {
         type: Sequelize.TEXT
       },
