@@ -13,8 +13,7 @@ async function getById(id) {
           u.updated_at
         FROM users as u
         LEFT JOIN users as cr on u.created_by = cr.id
-        WHERE u.id=$1
-        ORDER BY u.id desc;`,
+        WHERE u.id=$1;`,
       id
     );
   } catch (error) {
