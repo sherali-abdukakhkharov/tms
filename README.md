@@ -41,3 +41,7 @@ Check systax your code via eslint:airbnb
 |     **Admin**     | crud  |     crud      |        crud        |   crud   | crud  |  crud   | crud  |    crud     |    crud     |
 |    **Rahbar**     |   r   |      ru       |        crud        |   crud   |
 |     **Xodim**     |       |               |                    |    r     |  ru   |
+
+#### Database architecture
+
+https://dbdiagram.io/d/61f121667cf3fc0e7c69f0be
